@@ -15,18 +15,18 @@
        TOKENS
     ========================================= */
     :root {
-      --bg:         #F5EFE6;
-      --bg-alt:     #EDE4D8;
-      --bg-dark:    #231F1C;
-      --text:       #2C2420;
-      --muted:      #8A7E75;
-      --sage:       #7A9E7E;
-      --sand:       #C9973A;
-      --clay:       #B5512E;
-      --border:     #D5C9BB;
-      --sage-pale:  #EBF2EB;
-      --sand-pale:  #FBF3E3;
-      --clay-pale:  #FAEAE4;
+      --bg:         #FDF0EE;
+      --bg-alt:     #F5E5E2;
+      --bg-dark:    #1E1118;
+      --text:       #1E1118;
+      --muted:      #9A7E80;
+      --sage:       #8FAF92;
+      --sand:       #C97A8A;
+      --clay:       #8B1A2D;
+      --border:     #E2CECA;
+      --sage-pale:  #EDF4EE;
+      --sand-pale:  #FDF0F2;
+      --clay-pale:  #F8EBF0;
       --serif:      'Cormorant Garamond', Georgia, serif;
       --sans:       'Jost', system-ui, -apple-system, sans-serif;
     }
@@ -137,7 +137,7 @@
     }
     @media (min-width: 768px) { .nav { padding: 0 4rem; } }
     .nav.solid {
-      background: rgba(247,243,238,.94);
+      background: rgba(253,240,238,.96);
       backdrop-filter: blur(14px);
       border-color: var(--border);
     }
@@ -223,7 +223,7 @@
       transition:transform 10s cubic-bezier(.25,.46,.45,.94);
     }
     /* Fallback colour if image doesn't load */
-    .hero__bg { background-color: #2a1f1a; }
+    .hero__bg { background-color: #1E1118; }
     .hero__bg.zoomed { transform:scale(1); }
     .hero__veil {
       position:absolute; inset:0;
@@ -314,7 +314,14 @@
       letter-spacing:-.015em; color:var(--text);
       margin-bottom:1.8rem;
     }
-    .about__h2 em { font-style:italic; color:var(--clay); }
+    .about__h2 em { font-style:italic; color:var(--clay); font-weight:500; }
+
+    /* rose accent bar between hero and about */
+    .rose-band {
+      height: 6px;
+      background: linear-gradient(90deg, var(--sand) 0%, var(--clay) 50%, var(--sand) 100%);
+      opacity: 0.55;
+    }
     .about__copy {
       font-size:1.02rem; line-height:1.85;
       font-weight:300; color:var(--text); max-width:540px;
@@ -676,7 +683,7 @@
     Hero image: Winchester market square / independent market atmosphere.
     Using a direct Unsplash photo of a European outdoor market.
   -->
-  <div class="hero__bg" id="heroBg" style="background-image:url('https://loremflickr.com/1920/1080/outdoor,market,people,stalls?lock=14')"></div>
+  <div class="hero__bg" id="heroBg" style="background-image:url('https://loremflickr.com/1920/1080/market,artisan,independent,people?lock=88')"></div>
   <div class="hero__veil"></div>
 
   <div class="hero__body">
@@ -700,6 +707,8 @@
   </div>
 </section>
 
+
+<div class="rose-band" aria-hidden="true"></div>
 
 <!-- ============================================================
      2. ABOUT
@@ -730,7 +739,7 @@
         -->
         <img
           class="about__img"
-          src="https://loremflickr.com/900/700/artisan,maker,craft,workshop?lock=3"
+          src="https://loremflickr.com/900/700/ceramics,pottery,studio,hands?lock=61"
           alt="An artisan at work"
           loading="lazy"
           onerror="this.src='https://picsum.photos/seed/shopinterior22/900/700'"
@@ -799,7 +808,7 @@
   <!--
     Background: Winchester High Street / cathedral city architecture.
   -->
-  <div class="venue__bg" style="background-image:url('https://loremflickr.com/1920/900/winchester,england,cathedral,street?lock=7')"></div>
+  <div class="venue__bg" style="background-image:url('https://loremflickr.com/1920/900/cobblestone,england,oldtown,street?lock=77')"></div>
   <div class="wrap">
     <div class="venue__in">
 
@@ -892,35 +901,35 @@
       Each image has an onerror fallback to picsum.photos.
     -->
     <div class="iitem r">
-      <img src="https://loremflickr.com/600/600/coffee,barista,cafe?lock=21" alt="Specialty coffee" loading="lazy" onerror="this.src='https://picsum.photos/seed/coffeea/600/600'">
+      <img src="https://loremflickr.com/600/600/coffee,latte,art,indie?lock=31" alt="Specialty coffee" loading="lazy" onerror="this.src='https://picsum.photos/seed/coffeea/600/600'">
       <div class="iitem__veil"></div>
     </div>
     <div class="iitem r d1">
-      <img src="https://loremflickr.com/600/600/pottery,ceramics,handmade?lock=22" alt="Handmade ceramics" loading="lazy" onerror="this.src='https://picsum.photos/seed/ceramicb/600/600'">
+      <img src="https://loremflickr.com/600/600/printmaking,art,print,studio?lock=32" alt="Handmade ceramics" loading="lazy" onerror="this.src='https://picsum.photos/seed/ceramicb/600/600'">
       <div class="iitem__veil"></div>
     </div>
     <div class="iitem r d2">
-      <img src="https://loremflickr.com/600/600/market,stall,outdoor?lock=23" alt="Market stall" loading="lazy" onerror="this.src='https://picsum.photos/seed/marketc/600/600'">
+      <img src="https://loremflickr.com/600/600/market,people,outdoor,community?lock=33" alt="Market stall" loading="lazy" onerror="this.src='https://picsum.photos/seed/marketc/600/600'">
       <div class="iitem__veil"></div>
     </div>
     <div class="iitem r d3">
-      <img src="https://loremflickr.com/600/600/vintage,books,shop?lock=24" alt="Books and printed matter" loading="lazy" onerror="this.src='https://picsum.photos/seed/booksd/600/600'">
+      <img src="https://loremflickr.com/600/600/vintage,textile,fabric,craft?lock=34" alt="Books and printed matter" loading="lazy" onerror="this.src='https://picsum.photos/seed/booksd/600/600'">
       <div class="iitem__veil"></div>
     </div>
     <div class="iitem r">
-      <img src="https://loremflickr.com/600/600/flowers,market,bouquet?lock=25" alt="Flowers and botanicals" loading="lazy" onerror="this.src='https://picsum.photos/seed/flowerse/600/600'">
+      <img src="https://loremflickr.com/600/600/wildflowers,botanical,arrangement?lock=35" alt="Flowers and botanicals" loading="lazy" onerror="this.src='https://picsum.photos/seed/flowerse/600/600'">
       <div class="iitem__veil"></div>
     </div>
     <div class="iitem r d1">
-      <img src="https://loremflickr.com/600/600/food,artisan,produce?lock=26" alt="Artisan food" loading="lazy" onerror="this.src='https://picsum.photos/seed/foodf/600/600'">
+      <img src="https://loremflickr.com/600/600/ceramics,handmade,clay,bowl?lock=36" alt="Artisan food" loading="lazy" onerror="this.src='https://picsum.photos/seed/foodf/600/600'">
       <div class="iitem__veil"></div>
     </div>
     <div class="iitem r d2">
-      <img src="https://loremflickr.com/600/600/people,market,shopping?lock=27" alt="Creative makers" loading="lazy" onerror="this.src='https://picsum.photos/seed/craftg/600/600'">
+      <img src="https://loremflickr.com/600/600/independentshop,shopping,browsing?lock=37" alt="Creative makers" loading="lazy" onerror="this.src='https://picsum.photos/seed/craftg/600/600'">
       <div class="iitem__veil"></div>
     </div>
     <div class="iitem r d3">
-      <img src="https://loremflickr.com/600/600/winchester,highstreet,england?lock=28" alt="Winchester streets" loading="lazy" onerror="this.src='https://picsum.photos/seed/streetsh/600/600'">
+      <img src="https://loremflickr.com/600/600/england,cobblestone,market,town?lock=38" alt="Winchester streets" loading="lazy" onerror="this.src='https://picsum.photos/seed/streetsh/600/600'">
       <div class="iitem__veil"></div>
     </div>
   </div>
